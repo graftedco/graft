@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npx create-next-app@latest temp-graft --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(rm -rf temp-graft package.json)",
+      "Read(//c/Users/User/OneDrive/Desktop/**)",
+      "Bash(npx create-next-app@latest graft-build --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(cp -r /c/Users/User/OneDrive/Desktop/graft-build/* /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(cp /c/Users/User/OneDrive/Desktop/graft-build/.* /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(cp -r /c/Users/User/OneDrive/Desktop/graft-build/src /c/Users/User/OneDrive/Desktop/GRAFT/src)",
+      "Bash(cp /c/Users/User/OneDrive/Desktop/graft-build/package.json /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(cp /c/Users/User/OneDrive/Desktop/graft-build/package-lock.json /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(cp /c/Users/User/OneDrive/Desktop/graft-build/tsconfig.json /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(cp /c/Users/User/OneDrive/Desktop/graft-build/postcss.config.mjs /c/Users/User/OneDrive/Desktop/GRAFT/)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const s = require\\(''stripe''\\); console.log\\(typeof s\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''stripe/cjs/apiVersion.js''\\)\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://uuhgllyyjpbfomvmhvea.supabase.co/rest/v1/\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1aGdsbHl5anBiZm9tdm1odmVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4NzQzNDAsImV4cCI6MjA5MDQ1MDM0MH0.UV_z2le_g0F0qIKH_g1N7aoBoCHHQvBOpeZ-j1qVjPM\")",
+      "Bash(curl -s \"https://google.com\" -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s -X POST \"https://uuhgllyyjpbfomvmhvea.supabase.co/rest/v1/rpc/exec_sql\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1aGdsbHl5anBiZm9tdm1odmVhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDg3NDM0MCwiZXhwIjoyMDkwNDUwMzQwfQ.8jJHCXWLHgdTZ7koLrbXZpowekBg28KnHmbAtzz5dkE\" -H \"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1aGdsbHl5anBiZm9tdm1odmVhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDg3NDM0MCwiZXhwIjoyMDkwNDUwMzQwfQ.8jJHCXWLHgdTZ7koLrbXZpowekBg28KnHmbAtzz5dkE\" -H \"Content-Type: application/json\")",
+      "Bash(ls -la \"C:/Users/User/OneDrive/Desktop/GRAFT/src/lib/module-content-\"*)",
+      "Bash(npx next:*)",
+      "Bash(node -e \"const p = require.resolve\\(''next/types''\\); console.log\\(p\\)\")",
+      "Bash(ls \"C:/Users/User/OneDrive/Desktop/GRAFT/node_modules/next/types\"*)",
+      "Bash(grep -l \"ResolvingMetadata\" \"C:/Users/User/OneDrive/Desktop/GRAFT/node_modules/next/types/\"*)",
+      "Bash(grep -r ResolvingMetadata C:/Users/User/OneDrive/Desktop/GRAFT/node_modules/next/dist/ --include=*.d.ts -l)",
+      "Bash(grep -r ResolvingMetadata C:/Users/User/OneDrive/Desktop/GRAFT/node_modules/next/ --include=*.ts --include=*.d.ts -l)",
+      "mcp__Claude_Preview__preview_start",
+      "WebSearch",
+      "WebFetch(domain:www.youtube.com)"
+    ]
+  }
+}
