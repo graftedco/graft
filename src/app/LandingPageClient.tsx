@@ -63,8 +63,8 @@ function Navbar() {
           GRAFT
         </a>
         <a href="/api/checkout" className="gold-btn" style={{ padding: '10px 20px', fontSize: 15 }}>
-          <span style={{ display: 'none' }} className="desktop-label">Get Access — £30</span>
-          <span className="mobile-label">£30</span>
+          <span style={{ display: 'none' }} className="desktop-label">Get Access — £49.99</span>
+          <span className="mobile-label">£49.99</span>
         </a>
       </div>
       <style>{`
@@ -172,7 +172,7 @@ function Hero() {
         </p>
 
         <a href="/api/checkout" className="gold-btn" style={{ fontSize: 18, padding: '18px 36px' }}>
-          Get Instant Access — £30
+          Get Instant Access — £49.99
         </a>
 
         <div
@@ -266,12 +266,12 @@ function PurchaseCard() {
               GRAFT — The Complete Ecommerce Blueprint
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
-              <span style={{ color: '#666', textDecoration: 'line-through', fontSize: 18 }}>£60.00</span>
+              <span style={{ color: '#666', textDecoration: 'line-through', fontSize: 18 }}>£99.99</span>
               <span style={{ background: '#CC0000', color: '#FFFFFF', padding: '4px 10px', borderRadius: 4, fontSize: 12, fontWeight: 700 }}>
                 50% OFF
               </span>
             </div>
-            <div style={{ color: '#FFFFFF', fontSize: 48, fontWeight: 900, lineHeight: 1, marginBottom: 8 }}>£30</div>
+            <div style={{ color: '#FFFFFF', fontSize: 48, fontWeight: 900, lineHeight: 1, marginBottom: 8 }}>£49.99</div>
             <div style={{ color: GOLD, fontSize: 14, marginBottom: 24 }}>
               One-time payment. Instant access. Lifetime access included.
             </div>
@@ -303,7 +303,7 @@ function PurchaseCard() {
             </ul>
 
             <a href="/api/checkout" className="gold-btn" style={{ display: 'block', textAlign: 'center', fontSize: 18 }}>
-              Get Instant Access — £30
+              Get Instant Access — £49.99
             </a>
           </div>
         </div>
@@ -759,7 +759,7 @@ function BottomCTA() {
   return (
     <section style={{ background: '#000', padding: '80px 24px', textAlign: 'center' }}>
       <p style={{ color: GOLD, fontSize: 20, marginBottom: 24 }}>
-        Limited spots at this price — grab GRAFT for £30 before it goes up.
+        Limited spots at this price — grab GRAFT for £49.99 before it goes up.
       </p>
       <a href="/api/checkout" className="gold-btn" style={{ fontSize: 18 }}>Get Access Now</a>
     </section>

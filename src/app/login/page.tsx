@@ -40,7 +40,7 @@ export default function LoginPage() {
           </button>
         </form>
         <p style={{ color: '#AAAAAA', fontSize: 13, textAlign: 'center', marginTop: 24 }}>
-          Don&apos;t have access? <a href="/" style={{ color: '#D4AF37' }}>Get GRAFT for £30</a>
+          Don&apos;t have access? <a href="/" style={{ color: '#D4AF37' }}>Get GRAFT for £49.99</a>
         </p>
       </div>
     </main>
