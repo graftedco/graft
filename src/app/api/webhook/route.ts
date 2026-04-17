@@ -85,10 +85,14 @@ export async function POST(req: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || origin;
   const loginUrl = `${siteUrl}/login`;
 
+  const fromEmail = process.env.RESEND_FROM_EMAIL || 'GRAFT <onboarding@resend.dev>';
+  const replyTo = 'grafted.business@gmail.com';
+
   try {
-    await resend.emails.send({
-      from: 'GRAFT <grafted.business@gmail.com>',
+    const result = await resend.emails.send({
+      from: fromEmail,
       to: email,
+      replyTo,
       subject: 'Welcome to GRAFT — Your Course Access',
       html: `
         <div style="font-family: Arial, sans-serif; background:#000; color:#fff; padding:40px;">
@@ -100,8 +104,13 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+    if (result.error) {
+      console.error('Resend send failed:', result.error);
+    } else {
+      console.log('Welcome email sent', { to: email, id: result.data?.id });
+    }
   } catch (emailError) {
-    console.error('Resend email error:', emailError);
+    console.error('Resend threw:', emailError);
   }
 
   return NextResponse.json({ received: true });
