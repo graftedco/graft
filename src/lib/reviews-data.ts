@@ -18,7 +18,7 @@ export const staticReviews: Review[] = [
     name: 'Sophie R',
     location: 'London',
     rating: 5,
-    text: 'Complete beginner here — never even heard of Shopify before. The store setup walkthrough held my hand through every single step. My store looked professional within a day. Genuinely impressive for £30.',
+    text: 'Complete beginner here — never even heard of Shopify before. The store setup walkthrough held my hand through every single step. My store looked professional within a day. Genuinely impressive for £49.99.',
     date: '18 Jan 2026',
   },
   {
@@ -39,7 +39,7 @@ export const staticReviews: Review[] = [
     name: 'Ryan K',
     location: 'Bristol',
     rating: 5,
-    text: 'Made £340 in my first month following this course step by step. The budget breakdown was spot on — I knew exactly what to spend and where. Worth every penny of the £30 and then some.',
+    text: 'Made £340 in my first month following this course step by step. The budget breakdown was spot on — I knew exactly what to spend and where. Worth every penny of the £49.99 and then some.',
     date: '8 Feb 2026',
   },
   {
@@ -60,7 +60,7 @@ export const staticReviews: Review[] = [
     name: 'Priya S',
     location: 'Leicester',
     rating: 5,
-    text: 'I was so nervous about spending £30 on yet another course. Made the money back in my first week. The DSers setup alone saved me hours I would have wasted doing everything manually.',
+    text: 'I was so nervous about spending £49.99 on yet another course. Made the money back in my first week. The DSers setup alone saved me hours I would have wasted doing everything manually.',
     date: '1 Mar 2026',
   },
   {
@@ -109,7 +109,7 @@ export const staticReviews: Review[] = [
     name: 'Connor D',
     location: 'Oxford',
     rating: 4,
-    text: 'Really solid course for £30. Taught me more than three YouTube courses combined. Would love a bit more on Instagram ads specifically but honestly what is here is excellent. Module 8 — Running Paid Ads alone was worth it.',
+    text: 'Really solid course for £49.99. Taught me more than three YouTube courses combined. Would love a bit more on Instagram ads specifically but honestly what is here is excellent. Module 8 — Running Paid Ads alone was worth it.',
     date: '5 Apr 2026',
   },
   {
@@ -123,14 +123,14 @@ export const staticReviews: Review[] = [
     name: 'Theo R',
     location: 'Portsmouth',
     rating: 5,
-    text: 'Better value than every other course I have bought combined. I spent over £400 on courses before finding GRAFT and this £30 course taught me more than all of them put together. Not even exaggerating.',
+    text: 'Better value than every other course I have bought combined. I spent over £400 on courses before finding GRAFT and this £49.99 course taught me more than all of them put together. Not even exaggerating.',
     date: '12 Apr 2026',
   },
   {
     name: 'Niamh B',
     location: 'Dublin',
     rating: 5,
-    text: 'Made back the £30 course price within 5 days of launching my store. The product research method is what did it — found a winner on my first try because I actually followed the criteria properly. Brilliant course.',
+    text: 'Made back the £49.99 course price within 5 days of launching my store. The product research method is what did it — found a winner on my first try because I actually followed the criteria properly. Brilliant course.',
     date: '15 Apr 2026',
   },
   {
