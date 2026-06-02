@@ -31,6 +31,14 @@ type YouTubePlayer = {
   unloadModule: (module: string) => void;
 };
 
+type FullscreenDocument = Document & {
+  webkitFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => Promise<void> | void;
+};
+type FullscreenElement = HTMLElement & {
+  webkitRequestFullscreen?: () => Promise<void> | void;
+};
+
 const SPEEDS = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 const VOLUMES = [1.0, 2.5, 5.0, 7.5, 10.0];
 const VOLUME_LABELS = ['100%', '250%', '500%', '750%', '1000%'];
@@ -107,6 +115,12 @@ export default function VideoPlayer({ videoId, title }: Props) {
             const p = playerRef.current;
             if (!p) return;
             try {
+              const iframe = p.getIframe();
+              if (iframe) {
+                iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', 'true');
+                iframe.setAttribute('tabindex', '-1');
+              }
               const savedSpeed = parseFloat(localStorage.getItem('graft_speed') || '1');
               const savedVol = parseInt(localStorage.getItem('graft_vol_idx') || '0', 10);
               if (SPEEDS.includes(savedSpeed)) {
@@ -233,15 +247,22 @@ export default function VideoPlayer({ videoId, title }: Props) {
     } catch {}
   };
 
-  const toggleFullscreen = () => {
-    const el = wrapperRef.current;
+  const toggleFullscreen = useCallback(() => {
+    const el = wrapperRef.current as FullscreenElement | null;
     if (!el) return;
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      el.requestFullscreen?.();
+    const doc = document as FullscreenDocument;
+    const current = doc.fullscreenElement || doc.webkitFullscreenElement;
+    if (current) {
+      if (doc.exitFullscreen) doc.exitFullscreen();
+      else if (doc.webkitExitFullscreen) doc.webkitExitFullscreen();
+      return;
     }
-  };
+    if (el.requestFullscreen) {
+      el.requestFullscreen().catch(() => {});
+    } else if (el.webkitRequestFullscreen) {
+      el.webkitRequestFullscreen();
+    }
+  }, []);
 
   const progressPct = duration > 0 ? (current / duration) * 100 : 0;
 
@@ -255,6 +276,21 @@ export default function VideoPlayer({ videoId, title }: Props) {
       aria-label={title || videoId}
     >
       <div className="yt-holder"><div ref={holderRef} style={{ width: '100%', height: '100%' }} /></div>
+
+      {/* Mask YouTube branding/links in the corners — always visible so nothing leaks through */}
+      <div className="vp-yt-mask" aria-hidden="true" />
+      <div className="vp-yt-mask bottom" aria-hidden="true" />
+
+      {/* Click shield captures all clicks before they reach the iframe so YouTube's
+          own UI (Watch on YouTube link, end card, etc.) can never be activated */}
+      {started && (
+        <div
+          className="vp-click-shield"
+          onClick={togglePlay}
+          role="button"
+          aria-label={playing ? 'Pause' : 'Play'}
+        />
+      )}
 
       {!started && ready && (
         <div className="vp-center-play" onClick={togglePlay} role="button" aria-label="Play">
