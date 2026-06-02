@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import GoldParticles from '@/components/GoldParticles';
+import VideoPlayer from '@/components/VideoPlayer';
 import type { Review } from '@/lib/reviews-data';
 
 type AnsweredQuestion = {
@@ -369,6 +370,29 @@ function WhyChooseUs() {
         <p style={{ textAlign: 'center', color: GOLD, fontStyle: 'italic', fontSize: 18, marginTop: 28 }}>
           What took us 2 years explained in less than 4 weeks.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function WhyEcommerce() {
+  return (
+    <section style={{ background: '#000', padding: '100px 24px' }}>
+      <div style={{ maxWidth: 960, margin: '0 auto' }}>
+        <h2
+          style={{
+            fontFamily: 'var(--font-playfair)',
+            color: GOLD,
+            fontSize: 'clamp(32px, 5vw, 48px)',
+            fontWeight: 800,
+            textAlign: 'center',
+            lineHeight: 1.15,
+            marginBottom: 48,
+          }}
+        >
+          Why Ecommerce Will Change Your Life
+        </h2>
+        <VideoPlayer videoId="OOePNHykWuw" title="Why Ecommerce Will Change Your Life" />
       </div>
     </section>
   );
@@ -804,6 +828,7 @@ export default function LandingPageClient({
       <Hero />
       <PurchaseCard />
       <WhyChooseUs />
+      <WhyEcommerce />
       <FAQ />
       <OurStory />
       <Reviews reviews={reviews} />
