@@ -155,6 +155,16 @@ a, button {
   border-radius: 12px;
   overflow: hidden;
 }
+.video-wrapper:fullscreen,
+.video-wrapper:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .video-wrapper iframe,
 .video-wrapper .yt-holder {
   position: absolute;
@@ -162,6 +172,33 @@ a, button {
   width: 100%;
   height: 100%;
   border: 0;
+  pointer-events: none;
+}
+
+.vp-click-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  cursor: pointer;
+  background: transparent;
+}
+
+.vp-yt-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  height: 70px;
+  background: #000;
+  z-index: 6;
+  pointer-events: none;
+}
+.vp-yt-mask.bottom {
+  top: auto;
+  bottom: 0;
+  right: 0;
+  width: 110px;
+  height: 50px;
 }
 
 .vp-controls {
